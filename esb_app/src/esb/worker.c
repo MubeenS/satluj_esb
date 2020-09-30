@@ -161,7 +161,8 @@ void *poll_database_for_new_requests(void *vargp)
 
         /* Clean up */
         //free(stat);
-        int c = remove(response);
+        if (response != = NULL)
+            int c = remove(response);
         if (c)
         {
             printf("Removing response failed.\n");
@@ -169,10 +170,11 @@ void *poll_database_for_new_requests(void *vargp)
 
         free(rc);
         c = remove(to_be_sent);
-        if (c) {
+        if (c)
+        {
             printf("Removing payload failed.\n");
         }
-           
+
         free_bmd(bmd_file);
         free_config(transform);
         free_config(transport);

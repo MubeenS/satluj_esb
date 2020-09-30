@@ -23,11 +23,6 @@
 //#define TO "testmailtm02@gmail.com"
 #define CC "testmailtm02@gmail.com"
 
-struct upload_status
-{
-    int lines_read;
-};
-
 
 void* send_mail(void *toptr, void *file_path_ptr)
 {   
@@ -38,7 +33,7 @@ void* send_mail(void *toptr, void *file_path_ptr)
     CURL *curl;
     CURLcode res;
     struct curl_slist *recipients = NULL;
-    
+
     curl = curl_easy_init();
     if (curl)
     {
